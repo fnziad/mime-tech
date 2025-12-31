@@ -2,7 +2,9 @@
 
 > **Digital infrastructure for the preservation, protection, and transmission of Bangladesh's theatre heritage.**
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://fnziad.github.io/mime-tech/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://mtc-project-pxpqr6nx1-fnziads-projects.vercel.app)
+[![GitHub](https://img.shields.io/badge/github-repo-blue)](https://github.com/fnziad/mime-tech)
+[![Deployed on Vercel](https://img.shields.io/badge/deployed%20on-vercel-black)](https://vercel.com)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-prototype-yellow)](https://github.com/fnziad/mime-tech)
 
