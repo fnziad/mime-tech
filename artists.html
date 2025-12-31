@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artists Directory | Mime Tech-Collective (MTC)</title>
+  <meta name="description"
+    content="Discover talented mime artists and performers in Bangladesh. Search and filter by technique, experience, and availability.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">M</div>
+        <span class="nav-logo-text">Mime <span>Tech</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Archive</a></li>
+        <li><a href="artists.html" class="nav-link active">Artists</a></li>
+        <li><a href="organizations.html" class="nav-link">Organizations</a></li>
+        <li><a href="impresario.html" class="nav-link">Impresario</a></li>
+        <li><a href="academy.html" class="nav-link">Academy</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="nav-auth">
+          <button class="btn btn-ghost" onclick="openAuthModal('login')">Login</button>
+          <button class="btn btn-ghost" onclick="openAuthModal('register')">Join</button>
+        </div>
+        <a href="academy.html" class="nav-cta">Join Cohort</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Magazine Hero Section -->
+  <header class="magazine-hero">
+    <div class="container">
+      <div class="magazine-hero-content">
+        <div class="magazine-hero-text">
+          <span class="magazine-hero-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Artists Directory
+          </span>
+          <h1 class="magazine-hero-title">The <span>Practitioners</span> of Silence</h1>
+          <p class="magazine-hero-subtitle">Discover talented mime artists and performers from Bangladesh's theatre of
+            resistance. Browse portfolios, view performances, and connect with artists for bookings.</p>
+          <div class="hero-meta" style="margin-top: var(--space-xl);">
+            <span class="hero-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+              23 Artists
+            </span>
+            <span class="hero-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="10" r="3"></circle>
+                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"></path>
+              </svg>
+              Dhaka, Chittagong, Rajshahi
+            </span>
+          </div>
+        </div>
+        <div class="magazine-hero-image">
+          <img src="dist/student_performance.png" alt="Mime artists performing on stage">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section" style="padding-top: 0;">
+    <div class="container">
+      <!-- Search & Filters -->
+      <section class="search-section">
+        <div class="search-bar" style="flex-direction: column; gap: var(--space-md);">
+          <div class="search-input-wrapper" style="width: 100%;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="search-input" placeholder="Search artists by name, skill, or organization..."
+              id="artistSearch">
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center;">
+            <div class="filter-group">
+              <button class="filter-btn active" data-filter="all">All Artists</button>
+              <button class="filter-btn" data-filter="available">Available Now</button>
+              <button class="filter-btn" data-filter="master">Master Artists</button>
+              <button class="filter-btn" data-filter="student">Students</button>
+            </div>
+
+            <select class="form-select" style="width: auto; min-width: 150px;" id="techniqueFilter">
+              <option value="">All Techniques</option>
+              <option value="corporeal">Corporeal Mime</option>
+              <option value="huda-yoga">Huda Yoga</option>
+              <option value="jatra">Jatra Fusion</option>
+              <option value="protest">Protest Theatre</option>
+              <option value="fixed-point">Fixed Point</option>
+            </select>
+
+            <select class="form-select" style="width: auto; min-width: 150px;" id="locationFilter">
+              <option value="">All Locations</option>
+              <option value="dhaka">Dhaka</option>
+              <option value="chittagong">Chittagong</option>
+              <option value="rajshahi">Rajshahi</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Results Count -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-lg);">
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Showing <strong style="color: var(--text-primary);" id="artistCount">6</strong> artists
+          </p>
+          <div style="display: flex; gap: var(--space-sm); align-items: center;">
+            <span style="font-size: 0.9rem; color: var(--text-muted);">View:</span>
+            <button class="btn btn-icon btn-ghost active" id="gridViewBtn" onclick="setView('grid')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </button>
+            <button class="btn btn-icon btn-ghost" id="listViewBtn" onclick="setView('list')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Artists Grid -->
+      <div class="grid grid-3" id="artistsGrid">
+
+        <!-- Artist 1: Shariar Shawon -->
+        <article class="card artist-card" data-categories="master available corporeal huda-yoga dhaka"
+          data-artist-id="1">
+          <div class="artist-avatar">
+            <img src="dist/artist_portrait.png" alt="Master Shariar Shawon"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+            <span class="artist-status" title="Available for booking"></span>
+          </div>
+          <h3 class="artist-name">Master Shariar Shawon</h3>
+          <p class="artist-title">Master Artist & Founder</p>
+          <p class="artist-bio">International touring artist with 14+ years experience. Founder of Shawon Mime Academy.
+            Specializes in corporeal mime and Huda Yoga breathing techniques.</p>
+
+          <div class="artist-skills">
+            <span class="artist-skill">Corporeal Mime</span>
+            <span class="artist-skill">Huda Yoga</span>
+            <span class="artist-skill">Fixed Point</span>
+          </div>
+
+          <div class="artist-stats">
+            <div class="artist-stat">
+              <div class="artist-stat-value">14</div>
+              <div class="artist-stat-label">Years</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">47</div>
+              <div class="artist-stat-label">Tours</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">200+</div>
+              <div class="artist-stat-label">Students</div>
+            </div>
+          </div>
+
+          <a href="artist-profile.html?id=1" class="btn btn-primary btn-block">View Profile</a>
+        </article>
+
+        <!-- Artist 2: DUMA Ensemble Member -->
+        <article class="card artist-card" data-categories="student available protest jatra dhaka" data-artist-id="2">
+          <div class="artist-avatar">
+            <div class="artist-avatar-placeholder">M</div>
+            <span class="artist-status" title="Available for booking"></span>
+          </div>
+          <h3 class="artist-name">Mohammad Shoron</h3>
+          <p class="artist-title">General Secretary, DUMA</p>
+          <p class="artist-bio">Political theatre activist and protest mime specialist. Leading voice in the July 2024
+            Uprising documentation efforts.</p>
+
+          <div class="artist-skills">
+            <span class="artist-skill">Protest Theatre</span>
+            <span class="artist-skill">Jatra Fusion</span>
+            <span class="artist-skill">Documentation</span>
+          </div>
+
+          <div class="artist-stats">
+            <div class="artist-stat">
+              <div class="artist-stat-value">6</div>
+              <div class="artist-stat-label">Years</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">23</div>
+              <div class="artist-stat-label">Events</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">50+</div>
+              <div class="artist-stat-label">Students</div>
+            </div>
+          </div>
+
+          <a href="artist-profile.html?id=2" class="btn btn-secondary btn-block">View Profile</a>
+        </article>
+
+        <!-- Artist 3: Fahim Plabon -->
+        <article class="card artist-card" data-categories="student corporeal jatra dhaka" data-artist-id="3">
+          <div class="artist-avatar">
+            <div class="artist-avatar-placeholder">F</div>
+          </div>
+          <h3 class="artist-name">Fahim Akhand Plabon</h3>
+          <p class="artist-title">Secretary, BUDTF</p>
+          <p class="artist-bio">Microbiology student by day, mime artist by passion. Represents the new generation of
+            Bangladeshi mime practitioners.</p>
+
+          <div class="artist-skills">
+            <span class="artist-skill">Corporeal Mime</span>
+            <span class="artist-skill">Comedy Mime</span>
+            <span class="artist-skill">Improv</span>
+          </div>
+
+          <div class="artist-stats">
+            <div class="artist-stat">
+              <div class="artist-stat-value">3</div>
+              <div class="artist-stat-label">Years</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">9</div>
+              <div class="artist-stat-label">Performances</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">15</div>
+              <div class="artist-stat-label">Workshops</div>
+            </div>
+          </div>
+
+          <a href="artist-profile.html?id=3" class="btn btn-secondary btn-block">View Profile</a>
+        </article>
+
+        <!-- Artist 4: Kazi Anonna Preeti -->
+        <article class="card artist-card" data-categories="student available fixed-point dhaka" data-artist-id="4">
+          <div class="artist-avatar">
+            <div class="artist-avatar-placeholder">K</div>
+            <span class="artist-status" title="Available for booking"></span>
+          </div>
+          <h3 class="artist-name">Kazi Anonna Preeti</h3>
+          <p class="artist-title">Performance Artist</p>
+          <p class="artist-bio">Specializes in emotional storytelling through physical theatre. Focuses on making mime
+            accessible to general audiences.</p>
+
+          <div class="artist-skills">
+            <span class="artist-skill">Fixed Point</span>
+            <span class="artist-skill">Emotional Mime</span>
+            <span class="artist-skill">Teaching</span>
+          </div>
+
+          <div class="artist-stats">
+            <div class="artist-stat">
+              <div class="artist-stat-value">4</div>
+              <div class="artist-stat-label">Years</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">12</div>
+              <div class="artist-stat-label">Shows</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">30</div>
+              <div class="artist-stat-label">Students</div>
+            </div>
+          </div>
+
+          <a href="artist-profile.html?id=4" class="btn btn-secondary btn-block">View Profile</a>
+        </article>
+
+        <!-- Artist 5: Nazia Choudhury -->
+        <article class="card artist-card" data-categories="available corporeal chittagong" data-artist-id="5">
+          <div class="artist-avatar">
+            <div class="artist-avatar-placeholder">N</div>
+            <span class="artist-status" title="Available for booking"></span>
+          </div>
+          <h3 class="artist-name">Nazia Choudhury</h3>
+          <p class="artist-title">Solo Artist</p>
+          <p class="artist-bio">Specializing in women's narratives through movement and mask work traditions. Bringing
+            fresh perspective to Bangladeshi mime.</p>
+
+          <div class="artist-skills">
+            <span class="artist-skill">Mask Work</span>
+            <span class="artist-skill">Women's Theatre</span>
+            <span class="artist-skill">Movement</span>
+          </div>
+
+          <div class="artist-stats">
+            <div class="artist-stat">
+              <div class="artist-stat-value">8</div>
+              <div class="artist-stat-label">Years</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">35</div>
+              <div class="artist-stat-label">Shows</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">80+</div>
+              <div class="artist-stat-label">Students</div>
+            </div>
+          </div>
+
+          <a href="artist-profile.html?id=5" class="btn btn-secondary btn-block">View Profile</a>
+        </article>
+
+        <!-- Artist 6: Rahman's Student -->
+        <article class="card artist-card" data-categories="student available jatra rajshahi" data-artist-id="6">
+          <div class="artist-avatar">
+            <div class="artist-avatar-placeholder">R</div>
+            <span class="artist-status" title="Available for booking"></span>
+          </div>
+          <h3 class="artist-name">Rafiqul Islam</h3>
+          <p class="artist-title">Regional Coordinator</p>
+          <p class="artist-bio">Bringing mime to Rajshahi region. Integrates local folk traditions with contemporary
+            mime techniques for regional authenticity.</p>
+
+          <div class="artist-skills">
+            <span class="artist-skill">Folk Integration</span>
+            <span class="artist-skill">Jatra</span>
+            <span class="artist-skill">Community</span>
+          </div>
+
+          <div class="artist-stats">
+            <div class="artist-stat">
+              <div class="artist-stat-value">5</div>
+              <div class="artist-stat-label">Years</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">18</div>
+              <div class="artist-stat-label">Events</div>
+            </div>
+            <div class="artist-stat">
+              <div class="artist-stat-value">40</div>
+              <div class="artist-stat-label">Community</div>
+            </div>
+          </div>
+
+          <a href="artist-profile.html?id=6" class="btn btn-secondary btn-block">View Profile</a>
+        </article>
+
+      </div>
+
+      <!-- Empty State (hidden by default) -->
+      <div class="empty-state hidden" id="emptyState">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <h3>No Artists Found</h3>
+        <p>Try adjusting your search criteria or filters to find more artists.</p>
+        <button class="btn btn-primary mt-lg" onclick="resetFilters()">Reset Filters</button>
+      </div>
+
+      <!-- Pagination -->
+      <nav style="display: flex; justify-content: center; gap: var(--space-sm); margin-top: var(--space-3xl);">
+        <button class="btn btn-ghost" disabled>Previous</button>
+        <button class="btn btn-primary">1</button>
+        <button class="btn btn-ghost">2</button>
+        <button class="btn btn-ghost">3</button>
+        <button class="btn btn-ghost">Next</button>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">M</div>
+            <span class="nav-logo-text">Mime <span>Tech</span></span>
+          </div>
+          <p class="footer-tagline">Digital infrastructure for the preservation, protection, and transmission of
+            Bangladesh's theatre heritage.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Resistance Archive</a></li>
+            <li><a href="artists.html" class="footer-link">Artists Directory</a></li>
+            <li><a href="organizations.html" class="footer-link">Organizations</a></li>
+            <li><a href="impresario.html" class="footer-link">Virtual Impresario</a></li>
+            <li><a href="academy.html" class="footer-link">Living Academy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Department of Theatre</a></li>
+            <li><a href="#" class="footer-link">University of Dhaka</a></li>
+            <li><a href="#" class="footer-link">Open Source Community</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-developer">
+        <div class="developer-credit">
+          <span>Developed by</span>
+          <a href="https://github.com/fnziad" target="_blank" class="developer-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            Fahad Nadim Ziad
+          </a>
+          <a href="https://linkedin.com/in/fahadnadimziad" target="_blank" class="developer-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-credit-item">Mime Tech-Collective (MTC) © 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span id="toastMessage">Success!</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

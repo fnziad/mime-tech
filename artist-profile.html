@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Profile | Mime Tech-Collective (MTC)</title>
+  <meta name="description"
+    content="Professional profile of mime artist with portfolio, performances, and booking information.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">M</div>
+        <span class="nav-logo-text">Mime <span>Tech</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Archive</a></li>
+        <li><a href="artists.html" class="nav-link active">Artists</a></li>
+        <li><a href="organizations.html" class="nav-link">Organizations</a></li>
+        <li><a href="impresario.html" class="nav-link">Impresario</a></li>
+        <li><a href="academy.html" class="nav-link">Academy</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="nav-auth">
+          <button class="btn btn-ghost" onclick="openAuthModal('login')">Login</button>
+          <button class="btn btn-ghost" onclick="openAuthModal('register')">Join</button>
+        </div>
+        <a href="academy.html" class="nav-cta">Join Cohort</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Header -->
+  <section class="profile-header" id="profileHeader">
+    <div class="profile-cover">
+      <svg width="100%" height="100%" viewBox="0 0 400 533" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="profileBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a1a1a" />
+            <stop offset="30%" style="stop-color:#0f0f0f" />
+            <stop offset="70%" style="stop-color:#0a0a0a" />
+            <stop offset="100%" style="stop-color:#050505" />
+          </linearGradient>
+          <pattern id="subtlePattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+            <circle cx="40" cy="40" r="1" fill="#222" />
+          </pattern>
+        </defs>
+        <rect width="400" height="533" fill="url(#profileBg)" />
+        <rect width="400" height="533" fill="url(#subtlePattern)" opacity="0.5" />
+        <circle cx="50" cy="80" r="30" fill="none" stroke="#dc2626" stroke-width="0.5" opacity="0.2" />
+        <circle cx="350" cy="450" r="50" fill="none" stroke="#dc2626" stroke-width="0.5" opacity="0.15" />
+      </svg>
+      <div class="profile-cover-overlay"></div>
+    </div>
+
+    <div class="profile-info">
+      <div style="display: flex; gap: var(--space-lg); align-items: flex-end; flex-wrap: wrap;">
+        <div class="artist-avatar" style="width: 150px; height: 150px; margin: 0; flex-shrink: 0;">
+          <img src="dist/artist_portrait.png" alt="Master Shariar Shawon"
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+          <span class="artist-status"></span>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <h1 class="profile-name" id="artistName">Master Shariar Shawon</h1>
+          <p class="profile-tagline" id="artistTagline">International Touring Artist | Founder, Shawon Mime Academy | 14
+            Years Experience</p>
+
+          <div class="profile-meta">
+            <span class="profile-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span id="artistLocation">Dhaka, Bangladesh</span>
+            </span>
+            <span class="profile-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span id="artistSince">Since 2010</span>
+            </span>
+            <span class="badge badge-success">Available for Booking</span>
+          </div>
+
+          <div class="profile-actions">
+            <button class="btn btn-primary btn-lg" onclick="openBookingModal()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              Contact for Booking
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="downloadTechRider()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              Tech Rider
+            </button>
+            <button class="btn btn-ghost btn-lg" onclick="saveToFavorites()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-2xl);">
+
+        <!-- Left Column: Bio & Portfolio -->
+        <div>
+          <!-- Stats -->
+          <div class="stats-grid" style="margin-bottom: var(--space-2xl);">
+            <div class="stat-item">
+              <div class="stat-value">14</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">47</div>
+              <div class="stat-label">International Tours</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">200+</div>
+              <div class="stat-label">Students Trained</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">12</div>
+              <div class="stat-label">Techniques</div>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="tabs">
+            <button class="tab active" data-tab="about">About</button>
+            <button class="tab" data-tab="performances">Performances</button>
+            <button class="tab" data-tab="portfolio">Portfolio</button>
+            <button class="tab" data-tab="reviews">Reviews</button>
+          </div>
+
+          <!-- Tab Contents -->
+          <div id="about" class="tab-content active">
+            <h3 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Biography</h3>
+            <p style="margin-bottom: var(--space-md);">
+              Master Shariar Shawon stands as a pioneering figure in contemporary Bangladeshi mime, bridging traditional
+              performance arts with international corporeal theatre traditions. Trained in the lineage of Étienne
+              Decroux and influenced by the indigenous performance cultures of Bengal, Shawon has developed a unique
+              pedagogical approach that synthesizes Huda Yoga breathing techniques with corporeal mime methodology.
+            </p>
+            <p style="margin-bottom: var(--space-md);">
+              His international touring career has taken him to prestigious venues across South Korea, Morocco, India,
+              and throughout Southeast Asia, where he has both performed and conducted master classes. In 2018, he
+              founded the Shawon Mime Academy, dedicated to training the next generation of Bangladeshi mime artists
+              using techniques documented in Dr. Fr. Tapon De Rozario's seminal work, "Echoes of Silence."
+            </p>
+            <p>
+              Shawon's artistic practice is deeply rooted in the theatre of resistance, using the body as a tool for
+              social commentary and cultural preservation. His work during the July 2024 Uprising demonstrated the power
+              of physical theatre as a form of peaceful protest, documenting key moments through the art of mime.
+            </p>
+
+            <h4 style="font-family: var(--font-heading); margin: var(--space-xl) 0 var(--space-lg);">Specializations
+            </h4>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+              <span class="badge badge-outline">Corporeal Mime</span>
+              <span class="badge badge-outline">Huda Yoga Breathing</span>
+              <span class="badge badge-outline">Fixed Point Technique</span>
+              <span class="badge badge-outline">Indigenous Fusion</span>
+              <span class="badge badge-outline">Jatra Gestures</span>
+              <span class="badge badge-outline">Protest Choreography</span>
+              <span class="badge badge-outline">Theatre of Resistance</span>
+              <span class="badge badge-outline">Pedagogy</span>
+            </div>
+
+            <h4 style="font-family: var(--font-heading); margin: var(--space-xl) 0 var(--space-lg);">Touring History
+            </h4>
+            <div
+              style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;">
+              <div
+                style="padding: var(--space-md); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 500; color: var(--text-primary);">Seoul, South Korea</div>
+                  <div style="font-size: 0.875rem; color: var(--text-muted);">Korean National University of Arts</div>
+                </div>
+                <span class="badge badge-primary">2023</span>
+              </div>
+              <div
+                style="padding: var(--space-md); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 500; color: var(--text-primary);">Marrakech, Morocco</div>
+                  <div style="font-size: 0.875rem; color: var(--text-muted);">Fédération Internationale de Mime</div>
+                </div>
+                <span class="badge badge-primary">2022</span>
+              </div>
+              <div
+                style="padding: var(--space-md); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 500; color: var(--text-primary);">Kolkata, India</div>
+                  <div style="font-size: 0.875rem; color: var(--text-muted);">Sanskritik Mime Festival</div>
+                </div>
+                <span class="badge badge-primary">2021</span>
+              </div>
+              <div
+                style="padding: var(--space-md); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 500; color: var(--text-primary);">Dhaka, Bangladesh</div>
+                  <div style="font-size: 0.875rem; color: var(--text-muted);">National Theatre Festival</div>
+                </div>
+                <span class="badge badge-primary">2019-2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="performances" class="tab-content">
+            <h3 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Featured Performances</h3>
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="card" style="padding: var(--space-md);">
+                <div style="display: flex; gap: var(--space-md); align-items: center;">
+                  <div
+                    style="width: 60px; height: 60px; background: var(--bg-tertiary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: var(--space-xs);">Rakte Agun Legechhe</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">TSC, Dhaka • July 2024</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="padding: var(--space-md);">
+                <div style="display: flex; gap: var(--space-md); align-items: center;">
+                  <div
+                    style="width: 60px; height: 60px; background: var(--bg-tertiary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: var(--space-xs);">The Illusion of the Wall</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Shawon Mime Academy • 2023</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="portfolio" class="tab-content">
+            <h3 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Portfolio Gallery</h3>
+            <div class="grid grid-3" style="gap: var(--space-sm);">
+              <div
+                style="aspect-ratio: 1; background: var(--bg-tertiary); border-radius: var(--radius-sm); overflow: hidden;">
+                <img src="dist/mime_performance.png" alt="Mime Performance"
+                  style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div
+                style="aspect-ratio: 1; background: var(--bg-tertiary); border-radius: var(--radius-sm); overflow: hidden;">
+                <img src="dist/student_performance.png" alt="Student Performance"
+                  style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div
+                style="aspect-ratio: 1; background: var(--bg-tertiary); border-radius: var(--radius-sm); overflow: hidden;">
+                <img src="dist/duma_performance.png" alt="DUMA Performance"
+                  style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+            </div>
+          </div>
+
+          <div id="reviews" class="tab-content">
+            <h3 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Academic Endorsements</h3>
+            <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+              <blockquote
+                style="border-left: 2px solid var(--accent); padding-left: var(--space-lg); font-style: italic; color: var(--text-secondary);">
+                "Shariar Shawon represents the future of Bangladeshi mime—honoring tradition while forging new pathways
+                of resistance and expression."
+                <footer style="margin-top: var(--space-md); font-style: normal; font-size: 0.875rem;">
+                  — Dr. Fr. Tapon De Rozario, Author of "Echoes of Silence"
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Info & Booking -->
+        <div>
+          <!-- Quick Info Card -->
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-lg);">
+            <h4 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Quick Information</h4>
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+              <div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Primary
+                  Discipline</p>
+                <p style="font-weight: 500;">Corporeal Mime</p>
+              </div>
+              <div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Languages</p>
+                <p style="font-weight: 500;">Bengali, English</p>
+              </div>
+              <div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Travel
+                  Availability</p>
+                <p style="font-weight: 500;">International & Domestic</p>
+              </div>
+              <div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Response Time
+                </p>
+                <p style="font-weight: 500;">Within 48 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Organization -->
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-lg);">
+            <h4 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Affiliation</h4>
+            <div style="display: flex; gap: var(--space-md); align-items: center;">
+              <div class="org-logo" style="width: 50px; height: 50px;">
+                <div class="org-logo-placeholder" style="font-size: 1rem;">S</div>
+              </div>
+              <div>
+                <h5 style="font-size: 0.95rem;">Shawon Mime Academy</h5>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Founder & Director</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="card" style="padding: var(--space-lg);">
+            <h4 style="font-family: var(--font-heading); margin-bottom: var(--space-lg);">Connect</h4>
+            <div style="display: flex; gap: var(--space-sm);">
+              <a href="#" class="btn btn-ghost btn-icon" style="flex: 1;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+              <a href="#" class="btn btn-ghost btn-icon" style="flex: 1;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="#" class="btn btn-ghost btn-icon" style="flex: 1;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">M</div>
+            <span class="nav-logo-text">Mime <span>Tech</span></span>
+          </div>
+          <p class="footer-tagline">Digital infrastructure for the preservation, protection, and transmission of
+            Bangladesh's theatre heritage.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Resistance Archive</a></li>
+            <li><a href="artists.html" class="footer-link">Artists Directory</a></li>
+            <li><a href="organizations.html" class="footer-link">Organizations</a></li>
+            <li><a href="impresario.html" class="footer-link">Virtual Impresario</a></li>
+            <li><a href="academy.html" class="footer-link">Living Academy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Department of Theatre</a></li>
+            <li><a href="#" class="footer-link">University of Dhaka</a></li>
+            <li><a href="#" class="footer-link">Open Source Community</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-developer">
+        <div class="developer-credit">
+          <span>Developed by</span>
+          <a href="https://github.com/fnziad" target="_blank" class="developer-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            Fahad Nadim Ziad
+          </a>
+          <a href="https://linkedin.com/in/fahadnadimziad" target="_blank" class="developer-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-credit-item">Mime Tech-Collective (MTC) © 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Booking Inquiry</h3>
+        <button class="modal-close" onclick="closeBookingModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="bookingForm">
+          <div class="form-group">
+            <label class="form-label required">Your Name</label>
+            <input type="text" class="form-input" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Email</label>
+            <input type="email" class="form-input" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Phone</label>
+            <input type="tel" class="form-input" placeholder="+880" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Organization</label>
+            <input type="text" class="form-input" placeholder="Institution or company name" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+            <div class="form-group">
+              <label class="form-label required">Event Date</label>
+              <input type="date" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Event Type</label>
+              <select class="form-select">
+                <option>Performance</option>
+                <option>Workshop</option>
+                <option>Masterclass</option>
+                <option>Festival</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea"
+              placeholder="Describe your event, requirements, and any specific needs..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Submit Inquiry</button>
+          <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: var(--space-md);">
+            Your inquiry will be sent to the Student Manager who will respond within 48 hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span id="toastMessage">Success!</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

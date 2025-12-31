@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resistance Archive | Mime Tech-Collective (MTC)</title>
+  <meta name="description" content="The Resistance Vault: Archiving the Unspoken History of Bangladesh through mime, theatre, and performance art.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">M</div>
+        <span class="nav-logo-text">Mime <span>Tech</span></span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Archive</a></li>
+        <li><a href="impresario.html" class="nav-link">Impresario</a></li>
+        <li><a href="academy.html" class="nav-link">Academy</a></li>
+      </ul>
+      
+      <a href="academy.html" class="nav-cta">Join Cohort</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">The Resistance Vault: <span>Archiving</span> the Unspoken History of Bangladesh</h1>
+      <p class="hero-subtitle">A scientific archive preserving the documentary evidence, techniques, and artists of Bangladesh's theatre of resistance. Documenting movements, protecting heritage, and training the next generation.</p>
+      
+      <div class="hero-meta">
+        <span class="hero-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Est. 2024
+        </span>
+        <span class="hero-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          847 Documents
+        </span>
+        <span class="hero-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          23 Artists
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container">
+      <!-- Search & Filters -->
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="search-input" placeholder="Search archives by title, artist, or keyword..." id="searchInput">
+        </div>
+        
+        <div class="filter-group" id="filterGroup">
+          <button class="filter-btn active" data-filter="all">All Documents</button>
+          <button class="filter-btn" data-filter="era-july">July Uprising</button>
+          <button class="filter-btn" data-filter="technique-huda">Huda Yoga</button>
+          <button class="filter-btn" data-filter="artist-shawon">Shariar Shawon</button>
+          <button class="filter-btn" data-filter="location-tsc">TSC</button>
+          <button class="filter-btn" data-filter="type-video">Videos Only</button>
+        </div>
+      </div>
+
+      <!-- Results Count -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg);">
+        <p style="font-size: 0.875rem; color: var(--text-muted);">
+          Showing <strong style="color: var(--text-primary);">4</strong> documents
+        </p>
+        <div style="display: flex; gap: var(--space-sm); align-items: center;">
+          <span style="font-size: 0.875rem; color: var(--text-muted);">Sort by:</span>
+          <select class="form-select" style="width: auto; padding: var(--space-xs) var(--space-sm); font-size: 0.875rem;">
+            <option>Date (Newest)</option>
+            <option>Date (Oldest)</option>
+            <option>Artist A-Z</option>
+            <option>Title A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Archive Grid -->
+      <div class="grid grid-4" id="archiveGrid">
+        
+        <!-- Card 1: Rakte Agun Legechhe -->
+        <article class="card archive-card" data-categories="era-july artist-shawon location-tsc type-video">
+          <div class="archive-thumbnail">
+            <svg width="100%" height="100%" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="thumb1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#1a1a2e"/>
+                  <stop offset="50%" style="stop-color:#16213e"/>
+                  <stop offset="100%" style="stop-color:#0f0f23"/>
+                </linearGradient>
+                <pattern id="stickFigure1" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <circle cx="30" cy="20" r="8" fill="#333"/>
+                  <line x1="30" y1="28" x2="30" y2="45" stroke="#333" stroke-width="2"/>
+                  <line x1="30" y1="32" x2="45" y2="25" stroke="#dc2626" stroke-width="3"/>
+                  <line x1="30" y1="45" x2="20" y2="55" stroke="#333" stroke-width="2"/>
+                  <line x1="30" y1="45" x2="40" y2="55" stroke="#333" stroke-width="2"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="225" fill="url(#thumb1)"/>
+              <rect width="400" height="225" fill="url(#stickFigure1)" opacity="0.3"/>
+              <circle cx="320" cy="180" r="30" fill="#dc2626" opacity="0.9"/>
+              <polygon points="310,165 310,195 340,180" fill="#09090b"/>
+            </svg>
+            <span class="archive-duration">08:42</span>
+          </div>
+          
+          <div class="archive-content">
+            <h3 class="archive-title">Rakte Agun Legechhe (Blood is Burning)</h3>
+            
+            <div class="archive-meta">
+              <span class="archive-tag">July 25, 2024</span>
+              <span class="archive-tag">TSC</span>
+              <span class="archive-tag">Protest Mime</span>
+            </div>
+            
+            <p class="archive-context">Anti-Discrimination Student Movement. A powerful demonstration of corporeal resistance through traditional mime techniques fused with contemporary protest choreography.</p>
+            
+            <div class="archive-footer">
+              <span class="archive-doi badge badge-outline">DOI: 10.5281/zenodo.83921</span>
+              <span class="archive-license">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+                CC BY-NC-ND 4.0
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: The Cage of Silence -->
+        <article class="card archive-card" data-categories="technique-fixed type-video">
+          <div class="archive-thumbnail">
+            <svg width="100%" height="100%" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="thumb2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0a0a0a"/>
+                  <stop offset="50%" style="stop-color:#1a1a1a"/>
+                  <stop offset="100%" style="stop-color:#0d0d0d"/>
+                </linearGradient>
+                <pattern id="cagePattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="40" height="40" fill="none" stroke="#333" stroke-width="1"/>
+                  <circle cx="20" cy="20" r="6" fill="#222" stroke="#444" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="225" fill="url(#thumb2)"/>
+              <rect width="400" height="225" fill="url(#cagePattern)" opacity="0.4"/>
+              <circle cx="320" cy="180" r="30" fill="#dc2626" opacity="0.9"/>
+              <polygon points="310,165 310,195 340,180" fill="#09090b"/>
+            </svg>
+            <span class="archive-duration">12:15</span>
+          </div>
+          
+          <div class="archive-content">
+            <h3 class="archive-title">The Cage of Silence</h3>
+            
+            <div class="archive-meta">
+              <span class="archive-tag">Fixed Point</span>
+              <span class="archive-tag">Corporeal Mime</span>
+            </div>
+            
+            <p class="archive-context">DUMA Ensemble's exploration of physical confinement and psychological liberation through Étienne Decroux's fixed point technique.</p>
+            
+            <div class="archive-footer">
+              <span class="archive-doi badge badge-outline">DOI: 10.5281/zenodo.83922</span>
+              <span class="archive-license">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+                CC BY-NC-ND 4.0
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Wall Illusion Technique -->
+        <article class="card archive-card" data-categories="technique-huda artist-shawon type-video">
+          <div class="archive-thumbnail">
+            <svg width="100%" height="100%" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="thumb3" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" style="stop-color:#0f0f0f"/>
+                  <stop offset="100%" style="stop-color:#1f1f1f"/>
+                </linearGradient>
+                <pattern id="wallPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="100" height="100" fill="none" stroke="#333" stroke-width="2"/>
+                  <line x1="0" y1="50" x2="100" y2="50" stroke="#333" stroke-width="1"/>
+                  <line x1="50" y1="0" x2="50" y2="100" stroke="#333" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="225" fill="url(#thumb3)"/>
+              <rect width="400" height="225" fill="url(#wallPattern)" opacity="0.5"/>
+              <rect x="150" y="80" width="100" height="120" fill="#222" stroke="#dc2626" stroke-width="2" opacity="0.8"/>
+              <circle cx="320" cy="180" r="30" fill="#dc2626" opacity="0.9"/>
+              <polygon points="310,165 310,195 340,180" fill="#09090b"/>
+            </svg>
+            <span class="archive-duration">15:30</span>
+          </div>
+          
+          <div class="archive-content">
+            <h3 class="archive-title">The Illusion of the Wall</h3>
+            
+            <div class="archive-meta">
+              <span class="archive-tag">Huda Yoga</span>
+              <span class="archive-tag">Chapter VI</span>
+            </div>
+            
+            <p class="archive-context">Master Shariar Shawon demonstrates the foundational exercise from Dr. Fr. Tapon De Rozario's seminal text on creating invisible barriers.</p>
+            
+            <div class="archive-footer">
+              <span class="archive-doi badge badge-outline">DOI: 10.5281/zenodo.83923</span>
+              <span class="archive-license">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+                CC BY-NC-ND 4.0
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Jatra Fusion -->
+        <article class="card archive-card" data-categories="era-july location-tsc type-video">
+          <div class="archive-thumbnail">
+            <svg width="100%" height="100%" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="thumb4" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#1a1625"/>
+                  <stop offset="100%" style="stop-color:#0d0d0d"/>
+                </linearGradient>
+                <pattern id="jatraPattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                  <path d="M25 5 L30 20 L45 25 L30 30 L25 45 L20 30 L5 25 L20 20 Z" fill="none" stroke="#dc2626" stroke-width="1" opacity="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="225" fill="url(#thumb4)"/>
+              <rect width="400" height="225" fill="url(#jatraPattern)" opacity="0.3"/>
+              <circle cx="320" cy="180" r="30" fill="#dc2626" opacity="0.9"/>
+              <polygon points="310,165 310,195 340,180" fill="#09090b"/>
+            </svg>
+            <span class="archive-duration">18:20</span>
+          </div>
+          
+          <div class="archive-content">
+            <h3 class="archive-title">Integrating Jatra Gestures</h3>
+            
+            <div class="archive-meta">
+              <span class="archive-tag">Indigenous</span>
+              <span class="archive-tag">Fusion</span>
+            </div>
+            
+            <p class="archive-context">A workshop recording from July 2024 exploring the intersection of traditional Bengali Jatra hand gestures with contemporary mime vocabulary.</p>
+            
+            <div class="archive-footer">
+              <span class="archive-doi badge badge-outline">DOI: 10.5281/zenodo.83924</span>
+              <span class="archive-license">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+                CC BY-NC-ND 4.0
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Load More -->
+      <div style="text-align: center; margin-top: var(--space-2xl);">
+        <button class="btn btn-secondary btn-lg" id="loadMoreBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          Load More Documents
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Stats Section -->
+  <section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="profile-stats" style="border: none; margin: 0; padding: var(--space-2xl) 0;">
+        <div class="stat-item">
+          <div class="stat-value">847</div>
+          <div class="stat-label">Documents Archived</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">23</div>
+          <div class="stat-label">Featured Artists</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Techniques Documented</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">M</div>
+            <span class="nav-logo-text">Mime <span>Tech</span></span>
+          </div>
+          <p class="footer-tagline">Digital infrastructure for the preservation, protection, and transmission of Bangladesh's theatre heritage. Incubated at the Department of Theatre & Performance Studies, University of Dhaka.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Resistance Archive</a></li>
+            <li><a href="impresario.html" class="footer-link">Virtual Impresario</a></li>
+            <li><a href="academy.html" class="footer-link">Living Academy</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Department of Theatre</a></li>
+            <li><a href="#" class="footer-link">University of Dhaka</a></li>
+            <li><a href="#" class="footer-link">Open Source Community</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">Mime Tech-Collective (MTC) © 2026</p>
+        <div class="footer-credits">
+          <span class="footer-credit-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+            Incubated at: Department of Theatre & Performance Studies, University of Dhaka
+          </span>
+          <span class="footer-credit-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            Powered by: Student Labor & Open Source Technology
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
