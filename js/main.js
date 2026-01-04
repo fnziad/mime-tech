@@ -1276,6 +1276,37 @@
   init();
 
   // ==========================================
+  // Mobile Navigation
+  // ==========================================
+
+  function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const authActions = document.querySelector('.nav-auth');
+
+    if (navLinks) {
+      navLinks.classList.toggle('active');
+    }
+
+    // Also toggle auth buttons if they exist
+    if (authActions) {
+      if (document.querySelector('.nav-links.active')) {
+        authActions.style.display = 'flex';
+        authActions.style.flexDirection = 'column';
+        // Append to nav-links for mobile layout
+        if (!navLinks.contains(authActions)) {
+          navLinks.appendChild(authActions);
+        }
+      } else {
+        // Reset for desktop
+        authActions.style.display = '';
+        authActions.style.flexDirection = '';
+        // Move back to nav-actions if needed, but CSS media queries usually handle the hiding/showing
+        // This is a simple toggle logic, checking CSS implementation
+      }
+    }
+  }
+
+  // ==========================================
   // Global Functions (for onclick handlers)
   // ==========================================
 
@@ -1283,5 +1314,6 @@
   window.copyToClipboard = copyToClipboard;
   window.openYouTubeModal = openYouTubeModal;
   window.openVideoModal = openYouTubeModal; // Alias for HTML onclick handlers
+  window.toggleMobileMenu = toggleMobileMenu;
 
 })();
